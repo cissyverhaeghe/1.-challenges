@@ -97,7 +97,7 @@ function printFibonnacci(amount) {
   return fibonnacci;
 }
 
-console.log(printFibonnacci(50));
+//console.log(printFibonnacci(50));
 
 // 8. Write a JavaScript function that returns array elements larger than a number given:
 var numbers = [5, 2, 20, 60, 45];
@@ -117,24 +117,103 @@ function checkNumber(listNumbers, numberToCheck) {
 // console.log(checkNumber(numbers, toCheck));
 
 // 9. Write a Javascript function to generate a random color in format rgb(0,0,0);
+
+function randomColor() {
+  let randomColor =
+    "rgb(" +
+    Math.floor(Math.random() * 255) +
+    "," +
+    Math.floor(Math.random() * 255) +
+    "," +
+    Math.floor(Math.random() * 255) +
+    ")";
+  return randomColor;
+}
+
+// console.log(randomColor());
+
 // 10. Write a JavaScript program to find the types of a given angle.  Go to the editor
 //   Types of angles:
 //     Acute angle: An angle between 0 and 90 degrees.
 //     Right angle: An 90 degree angle.
 //     Obtuse angle: An angle between 90 and 180 degrees.
 //     Straight angle: A 180 degree angle.
+
+function giveTypeAngle(angle) {
+  if (angle < 90) {
+    return "acute";
+  }
+  if (angle === 90) {
+    return "right";
+  }
+  if (angle > 90 && angle < 180) {
+    return "obtuse";
+  } else return "straight";
+}
+
+//console.log(giveTypeAngle(180));
+
 // 11. Write a JavaScript function to merge two arrays and removes all duplicates elements.
+function mergeArrays(array1, array2) {
+  let i = 0;
+  array1.forEach(function (array1Item) {
+    array2.forEach(function (array2Item) {
+      if (array1Item === array2Item) {
+        console.log(array1Item);
+        array1.splice(i, 1);
+      }
+    });
+    i++;
+  });
+  const mergedArray = array1.concat(array2);
+  return mergedArray;
+}
+
+const array1 = ["blaba", "haha", "nene"];
+const array2 = ["jaja", "nene", "haha"];
+
+// console.log(mergeArrays(array1, array2));        doet het niet helemaal, als er twee duplicaten zijn gaat het mis
+
 // 12. given [2,1,6,4]
 //     expected => [8,1,216,64] => the power 3
 //     thirdPower([2,1,6,4])
+
+function thirdPower(numbers) {
+  const newNumbers = numbers.map(function (number) {
+    return Math.pow(number, 3);
+  });
+  return newNumbers;
+}
+
+//console.log(thirdPower([2, 1, 6, 4]));
 
 // 13. given [2,1,6,4]
 //     expected => [8,1,216,64] => the power N
 //    nthPower([2,1,6,4],16)
 
+function nthPower(numbers, power) {
+  const newNumbers = numbers.map(function (number) {
+    return Math.pow(number, power);
+  });
+  return newNumbers;
+}
+
+//console.log(nthPower([2, 1, 6, 4],3));
+
 // 14. given [2,1,6,4]
 //     calc avg
 //     calc sum    (reduce)
+
+function calcAvg(numbers) {
+  let sum = 0;
+  numbers.forEach(function (number) {
+    sum += number;
+  });
+  return (avg = sum / numbers.length);
+}
+
+// console.log(calcAvg([2, 1, 6, 4]));
+
 
 /* 15. given ["Ellen","bert","Bart","zaki","Sandra","Soroush"]
   remove all the names that do not start with a capital */
@@ -154,4 +233,27 @@ const names = ["Ellen", "bert", "Bart", "zaki", "Sandra", "Soroush"];
 //console.log(removeNotCapital(names));
 
 // 16. Write a Javascript function to find how many times a certain number occurs in that array.
+
+function howManyTimes(numbers, certainNumber){
+  let i = 0;
+  numbers.forEach(function(number){
+    if (number === certainNumber){
+      i++;
+    }
+  })
+  return i;
+}
+
+const list = [1, 9, 10, 1];
+//console.log(howManyTimes(list, 1));
+
+
 // 17. Write a JavaScript program to find the most frequent item of an array.
+
+function mostFrequent(list){
+  list.forEach(function(listItem){
+    list.filter(listItem);
+  }
+};
+
+//weet niet hoe
