@@ -1,7 +1,46 @@
 // 1. Write a JavaScript function to check if a certain word is a Palindrome.
+function isPalindrome(word) {
+  lengthWord = word.length;
+  let answer = "";
+  for (let i = 0; i < lengthWord; i++) {
+    if (word[i] === word[lengthWord - i - 1]) {
+      answer = true;
+    } else answer = false;
+  }
+  return answer;
+}
+
+//console.log(isPalindrome("racecareeee"));
+
 // 2. Write a JavaScript function to get a random item from an array.
+
+//const array = ["boom", "tak", "blad", "huis"];
+
+function getRandomArrayItem(array) {
+  arrayLength = array.length;
+  let randomNumber = Math.floor(Math.random() * arrayLength);
+  return array[randomNumber];
+}
+
+//console.log(getRandomArrayItem(array));
+
 // 3. Write a JavaScript program which accept a string as input and swap the case of each character.
 // 	For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
+
+function swapCase(string) {
+  let swapped = "";
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i].toUpperCase()) {
+      swapped += string[i].toLowerCase();
+    } else {
+      swapped += string[i].toUpperCase();
+    }
+  }
+  return swapped;
+}
+
+//console.log(swapCase("The Quick Brown Fox"));
+
 // 4.Write a JavaScript function to compute the sum of an array of integers.
 
 function sumOfNumbers(numbers) {
@@ -28,7 +67,37 @@ function removeSpecificelement(list, item) {
 //console.log(removeSpecificelement(myNames, "Barbie"));
 
 // 6. Write a function to remove all strings with less than X characters from an array of strings
+
+function removeFromArray(array, minimumCharacters) {
+  let i = 0;
+  array.forEach(function (arrayItem) {
+    if (arrayItem.length < minimumCharacters) {
+      console.log(arrayItem);
+      array.splice(i, 1);
+    }
+    i++;
+  });
+  return array;
+}
+
+//const array = ["boomeee", "takeeeeee", "bla", "huis", "tes", "test", "groenten"];
+//console.log(removeFromArray(array,4));
+
 // 7. Write a JavaScript function to generate an array with the first X Fibonacci numbers.
+
+function printFibonnacci(amount) {
+  const fibonnacci = [];
+  let fibonnacciNumber = 0;
+  fibonnacci.push(fibonnacciNumber);
+  fibonnacci.push(1);
+  for (let i = 0; i < amount; i++) {
+    fibonnacciNumber = fibonnacci[i] + fibonnacci[i + 1];
+    fibonnacci.push(fibonnacciNumber);
+  }
+  return fibonnacci;
+}
+
+console.log(printFibonnacci(50));
 
 // 8. Write a JavaScript function that returns array elements larger than a number given:
 var numbers = [5, 2, 20, 60, 45];
