@@ -17,7 +17,7 @@ function isPalindrome(word) {
 //const array = ["boom", "tak", "blad", "huis"];
 
 function getRandomArrayItem(array) {
-  arrayLength = array.length;
+  let arrayLength = array.length;
   let randomNumber = Math.floor(Math.random() * arrayLength);
   return array[randomNumber];
 }
@@ -51,7 +51,15 @@ function sumOfNumbers(numbers) {
   return sum;
 }
 
-// const numbers = [2, 6, 9 , 8];
+function sum() {
+  let total = 0;
+  for (let i = 0; i > arguments.length; i++) {
+    total += arguments[i];
+  }
+  return total;
+}
+
+const numbers = [2, 6, 9, 8];
 //console.log(sumOfNumbers(numbers));
 
 /* 5. Write a JavaScript function to remove a specific element from an array 
@@ -174,6 +182,8 @@ const array2 = ["jaja", "nene", "haha"];
 
 // console.log(mergeArrays(array1, array2));        doet het niet helemaal, als er twee duplicaten zijn gaat het mis
 
+new Set();
+
 // 12. given [2,1,6,4]
 //     expected => [8,1,216,64] => the power 3
 //     thirdPower([2,1,6,4])
@@ -214,7 +224,6 @@ function calcAvg(numbers) {
 
 // console.log(calcAvg([2, 1, 6, 4]));
 
-
 /* 15. given ["Ellen","bert","Bart","zaki","Sandra","Soroush"]
   remove all the names that do not start with a capital */
 
@@ -234,26 +243,25 @@ const names = ["Ellen", "bert", "Bart", "zaki", "Sandra", "Soroush"];
 
 // 16. Write a Javascript function to find how many times a certain number occurs in that array.
 
-function howManyTimes(numbers, certainNumber){
+function howManyTimes(numbers, certainNumber) {
   let i = 0;
-  numbers.forEach(function(number){
-    if (number === certainNumber){
+  numbers.forEach(function (number) {
+    if (number === certainNumber) {
       i++;
     }
-  })
+  });
   return i;
 }
 
 const list = [1, 9, 10, 1];
 //console.log(howManyTimes(list, 1));
 
-
 // 17. Write a JavaScript program to find the most frequent item of an array.
 
-function mostFrequent(list){
-  list.forEach(function(listItem){
+function mostFrequent(list) {
+  list.forEach(function (listItem) {
     list.filter(listItem);
-  }
-};
+  });
+}
 
 //weet niet hoe
